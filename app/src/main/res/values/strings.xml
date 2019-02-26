@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Tutorist</string>
+    <string name="button_name">Get Started!</string>
+    <string name="welcome_1">WELCOME TO</string>
+    <string name="welcome_2">TUTORIST</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="chooseuser">Are you a: </string>
+    <string name="tutor"> Tutor </string>
+    <string name="student"> Student </string>
+    <string name="or"> or </string>
+
+    <string name="info"> Please provide your: </string>
+    <string name="firstname"> First Name  </string>
+    <string name="lastname"> Last Name  </string>
+    <string name="email"> Email address </string>
+    <string name="phone"> Phone number </string>
+
+
+
+</resources>
