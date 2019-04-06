@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private Button bt;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -47,19 +48,12 @@ public class MainActivity extends AppCompatActivity {
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.choose_user);
+                start(v);
             }
         });
     }
 
     public void start (View v) {
-        startActivity(new Intent(MainActivity.this, Activity1.class));
+        startActivity(new Intent(MainActivity.this, LoginRegister.class));
     }
-    public void start2 (View v) {
-        startActivity(new Intent(MainActivity.this, Activity2.class));
-    }
-
-
-
-
 }
