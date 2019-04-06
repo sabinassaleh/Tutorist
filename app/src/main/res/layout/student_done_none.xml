@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2">
+    android:background="@drawable/background1">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -20,14 +20,16 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="333dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="140dp"
         android:fontFamily="sans-serif-condensed"
         android:lineSpacingExtra="14sp"
         android:text="Sorry, there aren't any available tutors for the subject(s) you entered, yet. "
+        android:textColor="#000"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

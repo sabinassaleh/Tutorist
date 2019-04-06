@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Tutorist</string>
     <string name="button_name">Get Started!</string>
-    <string name="welcome_1">WELCOME TO</string>
+    <string name="welcome_1">Welcome to</string>
     <string name="welcome_2">TUTORIST</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -17,7 +17,7 @@
     <string name="lastname"> Last Name  </string>
     <string name="email"> Email address </string>
     <string name="phone"> Phone number </string>
-
+    <string name="todo">TODO</string>
 
 
 </resources>

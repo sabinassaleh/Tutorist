@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
+    android:background="@drawable/background1"
     tools:context=".MainActivity">
 
     <android.support.design.widget.BottomNavigationView
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textColor="#000"
         android:text="Tutors are available for the following subjects:"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="161dp"
+        android:textColor="#000"
         android:text="Click on a given subject to view the tutor's information."
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"

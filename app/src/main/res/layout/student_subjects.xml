@@ -5,133 +5,126 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
+    android:background="@drawable/background1"
     tools:context=".MainActivity">
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
 
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="343dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="54dp"
         android:text="Enter Course Department and Course Number of the subject that you need help with: "
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/student_dept1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="40dp"
-        android:ems="10"
-        android:hint="DEPT(PHYS)"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#000"
-        app:layout_constraintEnd_toStartOf="@+id/editText8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="83dp"
-        android:ems="10"
-        android:hint="Number(201)"
-        android:inputType="number"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#000"
-        app:layout_constraintBottom_toBottomOf="@+id/editText7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText7"
-        app:layout_constraintTop_toTopOf="@+id/editText7" />
-
-    <EditText
-        android:id="@+id/editText10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="34dp"
-        android:ems="10"
-        android:hint="DEPT(CPSC)"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText11"
-        app:layout_constraintEnd_toStartOf="@+id/editText11"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editText11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="77dp"
-        android:ems="10"
-        android:hint="Number(150)"
-        android:inputType="number"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText10"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
-
-    <EditText
-        android:id="@+id/editText12"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginEnd="30dp"
-        android:ems="10"
-        android:hint="DEPT(MATH)"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText13"
-        app:layout_constraintEnd_toStartOf="@+id/editText13"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/editText13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="73dp"
-        android:ems="10"
-        android:hint="Number(240)"
-        android:inputType="number"
-        android:textColor="@android:color/black"
-        android:backgroundTint="#000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText12"
-        app:layout_constraintTop_toBottomOf="@+id/editText11" />
 
     <Button
         android:id="@+id/Next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="73dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="187dp"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_dept3" />
+
+    <EditText
+        android:id="@+id/student_dept1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
+        android:background="#FFF"
+        android:ems="10"
+        android:hint="Dept (MATH)"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/student_dept2"
+        app:layout_constraintEnd_toStartOf="@+id/student_num1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/student_num1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="91dp"
+        android:background="#FFF"
+        android:ems="10"
+        android:hint="Number (240)"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_dept1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/student_dept1" />
+
+    <EditText
+        android:id="@+id/student_dept2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="27dp"
+        android:background="#FFF"
+        android:ems="10"
+        android:hint="Dept (PSYC)"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/student_dept3"
+        app:layout_constraintEnd_toStartOf="@+id/student_num2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_dept1" />
+
+    <EditText
+        android:id="@+id/student_num2"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="88dp"
+        android:background="#FFF"
+        android:ems="10"
+        android:hint="Number (201)"
+        android:inputType="textPersonName"
+        app:layout_constraintBaseline_toBaselineOf="@+id/student_dept2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/student_dept2" />
+
+    <EditText
+        android:id="@+id/student_dept3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="87dp"
+        android:background="#FFF"
+        android:ems="10"
+        android:hint="Dept (CPSC)"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/Next"
+        app:layout_constraintEnd_toStartOf="@+id/student_num3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_dept2" />
+
+    <EditText
+        android:id="@+id/student_num3"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="87dp"
+        android:background="#FFF"
+        android:ems="10"
+        android:hint="Number (150)"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/student_dept3"
+        app:layout_constraintTop_toBottomOf="@+id/student_num1" />
 
 
 </android.support.constraint.ConstraintLayout>
