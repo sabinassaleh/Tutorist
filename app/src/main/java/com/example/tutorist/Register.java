@@ -41,16 +41,18 @@ public class Register extends AppCompatActivity {
         String str_email = email.getText().toString();
         String str_password = password.getText().toString();
         String type = "signup";
+        String type2 = "login";
 
         //Make sure user enters all details
-        if (str_firstName.isEmpty() && str_lastName.isEmpty() && str_email.isEmpty() &&
+    /*    if (str_firstName.isEmpty() && str_lastName.isEmpty() && str_email.isEmpty() &&
         str_password.isEmpty()) {
             Toast.makeText(this, "Please provide all information", Toast.LENGTH_SHORT).show();
-        }
-        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, str_firstName,str_lastName,str_email,str_password);
+        }*/
+    /*    BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+        backgroundWorker.execute(type, str_firstName,str_lastName,str_email,str_password);*/
 
-
+        BackgroundWorker ur=new BackgroundWorker(Register.this);
+        ur.execute(type, str_firstName,str_lastName,str_email,str_password);
 
         startActivity(new Intent(Register.this, RegisterSubjectsTutor.class));
     }
