@@ -1,8 +1,11 @@
 package com.example.tutorist;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,8 +13,9 @@ import android.widget.Toast;
 
 
 public class Register extends AppCompatActivity {
-    private EditText firstName, lastName, email, password;
+    private EditText firstName, lastName, email, password, sub1, sub2, sub3;
     private Button bt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,30 +34,53 @@ public class Register extends AppCompatActivity {
         lastName = (EditText) findViewById(R.id.tutor_lastName);
         email = (EditText) findViewById(R.id.t_email);
         password = (EditText) findViewById(R.id.pass_t);
+        sub1 = (EditText) findViewById(R.id.tutor_sub1);
+        sub2 = (EditText) findViewById(R.id.tutor_sub2);
+        sub3 = (EditText) findViewById(R.id.tutor_sub3);
     }
- //   public void OnReg(View view) {
-
-   // }
 
     public void goToRegisterSubjects(View v) {
         String str_firstName = firstName.getText().toString();
         String str_lastName = lastName.getText().toString();
         String str_email = email.getText().toString();
         String str_password = password.getText().toString();
+        String str_s1 = sub1.getText().toString();
+        String str_s2 = sub2.getText().toString();
+        String str_s3 = sub3.getText().toString();
+
         String type = "signup";
-        String type2 = "login";
 
         //Make sure user enters all details
-    /*    if (str_firstName.isEmpty() && str_lastName.isEmpty() && str_email.isEmpty() &&
-        str_password.isEmpty()) {
+        if (str_firstName.isEmpty() || str_lastName.isEmpty() || str_email.isEmpty() ||
+        str_password.isEmpty() || str_s1.isEmpty()) {
             Toast.makeText(this, "Please provide all information", Toast.LENGTH_SHORT).show();
-        }*/
-    /*    BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-        backgroundWorker.execute(type, str_firstName,str_lastName,str_email,str_password);*/
+        }
 
-        BackgroundWorker ur=new BackgroundWorker(Register.this);
-        ur.execute(type, str_firstName,str_lastName,str_email,str_password);
+        //CHECKS for valid email address
+        else if (Patterns.EMAIL_ADDRESS.matcher(str_email).matches() == true) {
+            BackgroundWorker ur=new BackgroundWorker(Register.this);
+            ur.execute(type, str_firstName,str_lastName,str_email,str_password, str_s1, str_s2, str_s3);
 
-        startActivity(new Intent(Register.this, RegisterSubjectsTutor.class));
+            SharedPreferences.Editor editor = ur.preferences.edit();
+            editor.putString("FName", str_firstName);
+            editor.putString("LName", str_lastName);
+            editor.putString("Email", str_email);
+            editor.putString("Subject1", str_s1);
+            editor.putString("Subject2", str_s2);
+            editor.putString("Subject3", str_s3);
+            editor.commit();
+
+/*
+            Intent intent = new Intent(Register.this, RegisterDoneStudent.class);
+            intent.putExtra("Subject1", str_s1);
+            startActivity(intent);*/
+
+            startActivity(new Intent(Register.this, RegisterDoneTutor.class));
+
+        }
+        else {
+            Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_LONG).show();
+        }
+
     }
 }
