@@ -139,12 +139,15 @@ public class BackgroundWorker_Student extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String s) {
         alertDialog.setMessage(s);
         alertDialog.show();
-        if (dataResponse!=null && dataResponse.equals("Login Successful. Welcome back Student!")) {
-            Intent intent = new Intent(context, LoginDashboard_Student.class);
-            context.startActivity(intent);
-        }
-        else {
-            Toast.makeText(context, "Please check your email and/or password, or register as a new user.", Toast.LENGTH_LONG).show();
+        String flag = preferences.getString("flag","0");
+        if (flag.equals("login")) {
+            if (dataResponse != null && dataResponse.equals("Login Successful. Welcome back Student!")) {
+                Intent intent = new Intent(context, LoginDashboard_Student.class);
+                context.startActivity(intent);
+            } else {
+                Toast.makeText(context, "That email and/or password doesn't match our records. Please " +
+                        "check your credentials or register as a new user.", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

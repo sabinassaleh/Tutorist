@@ -25,6 +25,7 @@ public class BackgroundWorker extends AsyncTask<String, Void, String>  {
     AlertDialog alertDialog;
     private static final String REGISTER_URL="http://ec2-52-14-130-163.us-east-2.compute.amazonaws.com/register.php";
     private static final String LOGIN_URL   ="http://ec2-52-14-130-163.us-east-2.compute.amazonaws.com/login.php";
+    private static final String STUD_URL="http://ec2-52-14-130-163.us-east-2.compute.amazonaws.com/update_subjects.php";
 
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
@@ -52,8 +53,6 @@ public class BackgroundWorker extends AsyncTask<String, Void, String>  {
             String email = params[3];
             String password = params[4];
             String s1 = params[5];
-            String s2 = params[6];
-            String s3 = params[7];
 
             try {
                 URL url = new URL(REGISTER_URL);
@@ -132,6 +131,32 @@ public class BackgroundWorker extends AsyncTask<String, Void, String>  {
                 e.printStackTrace();
             }
         }
+        if (type.equals("update")) {
+            String newSub = params[1];
+            try {
+                URL url = new URL(STUD_URL);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setDoOutput(true);
+                OutputStream outputStream = conn.getOutputStream();
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream,"UTF-8");
+                BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+                String myData = URLEncoder.encode("Subject1", "UTF-8")+"="+URLEncoder.encode(newSub, "UTF-8");
+                bufferedWriter.write(myData);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                InputStream inputStream = conn.getInputStream();
+                inputStream.close();
+
+                editor.putString("flag","update");
+                editor.commit();
+                return "Successfully Updated subject";
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
         return null;
     }
 
@@ -156,6 +181,12 @@ public class BackgroundWorker extends AsyncTask<String, Void, String>  {
                         "check your credentials or register as a new user.", Toast.LENGTH_LONG).show();
             }
         }
+        //go to new activity?
+/*        if (flag.equals("update")) {
+            if (dataResponse != null && dataResponse.equals("Successfully Updated subject")) {
+
+            }
+        }*/
     }
 
     @Override

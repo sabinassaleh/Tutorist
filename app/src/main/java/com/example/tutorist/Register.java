@@ -1,5 +1,6 @@
 package com.example.tutorist;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 public class Register extends AppCompatActivity {
     private EditText firstName, lastName, email, password, sub1, sub2, sub3;
     private Button bt;
+    SharedPreferences preferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class Register extends AppCompatActivity {
         email = (EditText) findViewById(R.id.t_email);
         password = (EditText) findViewById(R.id.pass_t);
         sub1 = (EditText) findViewById(R.id.tutor_sub1);
+        preferences = this.getSharedPreferences("MYPREFS", Context.MODE_PRIVATE);
+
 /*        sub2 = (EditText) findViewById(R.id.tutor_sub2);
         sub3 = (EditText) findViewById(R.id.tutor_sub3);*/
     }
@@ -61,13 +66,11 @@ public class Register extends AppCompatActivity {
             BackgroundWorker ur=new BackgroundWorker(Register.this);
             ur.execute(type, str_firstName,str_lastName,str_email,str_password, str_s1);
 
-            SharedPreferences.Editor editor = ur.preferences.edit();
+            SharedPreferences.Editor editor = preferences.edit();
             editor.putString("FName", str_firstName);
             editor.putString("LName", str_lastName);
             editor.putString("Email", str_email);
             editor.putString("Subject1", str_s1);
-/*            editor.putString("Subject2", str_s2);
-            editor.putString("Subject3", str_s3);*/
             editor.commit();
 
             startActivity(new Intent(Register.this, RegisterDoneTutor.class));

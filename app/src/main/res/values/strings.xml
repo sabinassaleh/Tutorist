@@ -27,7 +27,7 @@
     <string name="login">Go to Login</string>
 
     <string name="display">Here are available tutors: </string>
-    <string name="display_st">Click below to change your subject choice... </string>
+    <string name="display_st">Click below to change your subject choice...(e.g. PHYS151, CPSC250) </string>
 
     <string-array name="user_type">
         <item>Tutor</item>
