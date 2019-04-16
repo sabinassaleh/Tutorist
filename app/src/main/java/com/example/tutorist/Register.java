@@ -35,8 +35,8 @@ public class Register extends AppCompatActivity {
         email = (EditText) findViewById(R.id.t_email);
         password = (EditText) findViewById(R.id.pass_t);
         sub1 = (EditText) findViewById(R.id.tutor_sub1);
-        sub2 = (EditText) findViewById(R.id.tutor_sub2);
-        sub3 = (EditText) findViewById(R.id.tutor_sub3);
+/*        sub2 = (EditText) findViewById(R.id.tutor_sub2);
+        sub3 = (EditText) findViewById(R.id.tutor_sub3);*/
     }
 
     public void goToRegisterSubjects(View v) {
@@ -45,8 +45,8 @@ public class Register extends AppCompatActivity {
         String str_email = email.getText().toString();
         String str_password = password.getText().toString();
         String str_s1 = sub1.getText().toString();
-        String str_s2 = sub2.getText().toString();
-        String str_s3 = sub3.getText().toString();
+/*        String str_s2 = sub2.getText().toString();
+        String str_s3 = sub3.getText().toString();*/
 
         String type = "signup";
 
@@ -59,21 +59,16 @@ public class Register extends AppCompatActivity {
         //CHECKS for valid email address
         else if (Patterns.EMAIL_ADDRESS.matcher(str_email).matches() == true) {
             BackgroundWorker ur=new BackgroundWorker(Register.this);
-            ur.execute(type, str_firstName,str_lastName,str_email,str_password, str_s1, str_s2, str_s3);
+            ur.execute(type, str_firstName,str_lastName,str_email,str_password, str_s1);
 
             SharedPreferences.Editor editor = ur.preferences.edit();
             editor.putString("FName", str_firstName);
             editor.putString("LName", str_lastName);
             editor.putString("Email", str_email);
             editor.putString("Subject1", str_s1);
-            editor.putString("Subject2", str_s2);
-            editor.putString("Subject3", str_s3);
+/*            editor.putString("Subject2", str_s2);
+            editor.putString("Subject3", str_s3);*/
             editor.commit();
-
-/*
-            Intent intent = new Intent(Register.this, RegisterDoneStudent.class);
-            intent.putExtra("Subject1", str_s1);
-            startActivity(intent);*/
 
             startActivity(new Intent(Register.this, RegisterDoneTutor.class));
 

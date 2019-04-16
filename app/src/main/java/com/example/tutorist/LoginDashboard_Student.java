@@ -31,6 +31,8 @@ public class LoginDashboard_Student extends AppCompatActivity {
     ListView listView;
     ArrayAdapter<String> adapter;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,11 +56,12 @@ public class LoginDashboard_Student extends AppCompatActivity {
 
         SharedPreferences preferences;
         SharedPreferences.Editor editor;
+        String result = "";
+
 
         @Override
         protected String doInBackground(String... params) {
 
-            String result = "";
 
             try {
                 URL url = new URL(TUT_URL);
@@ -98,15 +101,6 @@ public class LoginDashboard_Student extends AppCompatActivity {
                JSONObject js = new JSONObject(result);
                int success = js.getInt("success");
                if (success ==1) {
-                  /* JSONArray student_info = js.getJSONArray("Student");
-                   JSONObject ind_student_info = student_info.getJSONObject(0);
-
-                   String Subject1 = ind_student_info.getString("FName");
-                   String Subject2 = ind_student_info.getString("Subject2");
-                   String Subject3 = ind_student_info.getString("Subject3");
-
-                   String line = Subject1 +"";
-                   adapter.add(line);*/
                     JSONArray tutors = js.getJSONArray("Tutor");
                     for (int i = 0; i < tutors.length(); i++) {
                         JSONObject tutor = tutors.getJSONObject(i);
@@ -114,16 +108,17 @@ public class LoginDashboard_Student extends AppCompatActivity {
                         String LName    = tutor.getString("LName");
                         String Email    = tutor.getString("Email");
                         String Subject1 = tutor.getString("Subject1");
-                        String Subject2 = tutor.getString("Subject2");
-                        String Subject3 = tutor.getString("Subject3");
-                        //if student's subjects = tutor's subjects, display info
+/*                        String Subject2 = tutor.getString("Subject2");
+                        String Subject3 = tutor.getString("Subject3");*/
 
-                        String line = FName + " " + LName + " " + Email + " " + Subject1 + " " + Subject2 + " " + Subject3;
+                        String line = FName + " " + LName + " " + Email + " " + Subject1;
                         adapter.add(line);
 
                     }
                }
                else {
+                   String noTutors = " Sorry, there aren't any available tutors for the subjects you have entered. Check back at another time. ";
+                   adapter.add(noTutors);
                    Toast.makeText(getApplicationContext(), "No tutors", Toast.LENGTH_LONG).show();
                }
 
@@ -132,50 +127,4 @@ public class LoginDashboard_Student extends AppCompatActivity {
            }
         }
     }
-  /*  private void getData() {
-
-        try {
-            URL url = new URL(TUT_URL);
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-
-            is = new BufferedInputStream(conn.getInputStream());
-
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            StringBuilder sb = new StringBuilder();
-
-            while ((line = br.readLine()) != null) {
-                sb.append(line+"\n");
-            }
-            is.close();
-            result = sb.toString();
-        }catch(Exception e) {
-            e.printStackTrace();
-        }
-
-        //JSON parsing
-        try {
-            JSONArray js = new JSONArray(result);
-            JSONObject jo = null;
-            fName = new String[js.length()];
-            lName = new String[js.length()];
-            email = new String[js.length()];
-
-            for (int i = 0; i < js.length(); i++) {
-                jo = js.getJSONObject(i);
-                fName[i] = jo.getString("FName");
-                lName[i] = jo.getString("LName");
-                email[i] = jo.getString("Email");
-
-            }
-
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
 }

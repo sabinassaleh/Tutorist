@@ -68,8 +68,8 @@ public class BackgroundWorker extends AsyncTask<String, Void, String>  {
                         +"&"+URLEncoder.encode("Email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")
                         +"&"+URLEncoder.encode("Password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8")
                         +"&"+URLEncoder.encode("Subject1","UTF-8")+"="+URLEncoder.encode(s1, "UTF-8")
-                        +"&"+URLEncoder.encode("Subject2","UTF-8")+"="+URLEncoder.encode(s2, "UTF-8")
-                        +"&"+URLEncoder.encode("Subject3","UTF-8")+"="+URLEncoder.encode(s3, "UTF-8")
+/*                        +"&"+URLEncoder.encode("Subject2","UTF-8")+"="+URLEncoder.encode(s2, "UTF-8")
+                        +"&"+URLEncoder.encode("Subject3","UTF-8")+"="+URLEncoder.encode(s3, "UTF-8")*/
                         ;
                 bufferedWriter.write(myData);
                 bufferedWriter.flush();
@@ -145,34 +145,6 @@ public class BackgroundWorker extends AsyncTask<String, Void, String>  {
     protected void onPostExecute(String s) {
         alertDialog.setMessage(s);
         alertDialog.show();
-
-    /*    String flag = preferences.getString("flag","0");
-        if (flag.equals("login")) {
-            String test = "false";
-            String fName = "";
-            String lName = "";
-            String email = "";
-            String[] serverResponse = s.split("[,]");
-            test = serverResponse[0];
-            email = serverResponse[1];
-          *//*  lName = serverResponse[2];
-            email = serverResponse[3];*//*
-
-            if (test.equals("true")) {
-               *//* editor.putString("FName", fName);
-                editor.commit();
-                editor.putString("LName", lName);
-                editor.commit();*//*
-                editor.putString("Email", email);
-                editor.commit();
-                Intent intent = new Intent(context, LoginDashboard.class);
-                context.startActivity(intent);
-            }else {
-                Toast.makeText(context, "That email and/or password doesn't match our records. Please " +
-                        "check your credentials or register as a new user.", Toast.LENGTH_LONG).show();
-
-            }
-        }*/
 
         String flag = preferences.getString("flag","0");
         if (flag.equals("login")) {

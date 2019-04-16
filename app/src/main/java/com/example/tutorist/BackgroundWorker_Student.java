@@ -48,8 +48,8 @@ public class BackgroundWorker_Student extends AsyncTask<String, Void, String> {
             String email = params[3];
             String password = params[4];
             String s1 = params[5];
-            String s2 = params[6];
-            String s3 = params[7];
+/*            String s2 = params[6];
+            String s3 = params[7];*/
 
             try {
                 URL url = new URL(REGISTER_URL);
@@ -64,8 +64,9 @@ public class BackgroundWorker_Student extends AsyncTask<String, Void, String> {
                         +"&"+URLEncoder.encode("Email", "UTF-8")+"="+URLEncoder.encode(email, "UTF-8")
                         +"&"+URLEncoder.encode("Password", "UTF-8")+"="+URLEncoder.encode(password, "UTF-8")
                         +"&"+URLEncoder.encode("Subject1","UTF-8")+"="+URLEncoder.encode(s1, "UTF-8")
-                        +"&"+URLEncoder.encode("Subject2","UTF-8")+"="+URLEncoder.encode(s2, "UTF-8")
-                        +"&"+URLEncoder.encode("Subject3","UTF-8")+"="+URLEncoder.encode(s3, "UTF-8");
+/*                        +"&"+URLEncoder.encode("Subject2","UTF-8")+"="+URLEncoder.encode(s2, "UTF-8")
+                        +"&"+URLEncoder.encode("Subject3","UTF-8")+"="+URLEncoder.encode(s3, "UTF-8")*/
+                        ;
                 bufferedWriter.write(myData);
                 bufferedWriter.flush();
                 bufferedWriter.close();

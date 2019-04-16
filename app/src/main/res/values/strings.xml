@@ -12,12 +12,27 @@
     <string name="student"> Student </string>
     <string name="or"> or </string>
 
-    <string name="info"> Please provide your: </string>
+    <string name="info"> Please provide the following: </string>
     <string name="firstname"> First Name  </string>
     <string name="lastname"> Last Name  </string>
     <string name="email"> Email address </string>
     <string name="phone"> Phone number </string>
     <string name="todo">TODO</string>
+
+    <string name="done">Click below to Login!</string>
+    <string name="thanks">Thank you for signing up as a tutor!</string>
+    <string name="thanks2">Thank you for signing up as a student!</string>
+
+
+    <string name="login">Go to Login</string>
+
+    <string name="display">Here are available tutors: </string>
+    <string name="display_st">Click below to change your subject choice... </string>
+
+    <string-array name="user_type">
+        <item>Tutor</item>
+        <item>Student</item>
+    </string-array>
 
 
 </resources>

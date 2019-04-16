@@ -12,94 +12,63 @@
         android:id="@+id/tutor_sub1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="47dp"
         android:layout_marginBottom="18dp"
         android:background="#FFF"
         android:ems="10"
         android:hint="PHYS151"
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/tutor_sub2"
+        app:layout_constraintBottom_toTopOf="@+id/tutor_lastName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tutor_firstName"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <EditText
-        android:id="@+id/tutor_sub2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFF"
-        android:ems="10"
-        android:hint="MATH150"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/tutor_sub3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tutor_lastName"
-        app:layout_constraintTop_toBottomOf="@+id/tutor_sub1" />
-
-    <EditText
-        android:id="@+id/tutor_sub3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="16dp"
-        android:background="#FFF"
-        android:ems="10"
-        android:hint="CPSC270"
-        android:inputType="textPersonName"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/pass_t"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/t_email"
-        app:layout_constraintTop_toBottomOf="@+id/tutor_sub2" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="38dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="45dp"
         android:text="@string/info"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tutor_sub1"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/tutor_firstName"
         android:layout_width="0dp"
-        android:layout_height="23dp"
+        android:layout_height="0dp"
         android:layout_marginStart="68dp"
+        android:layout_marginTop="1dp"
         android:layout_marginEnd="26dp"
+        android:layout_marginBottom="1dp"
         android:background="#FFF"
         android:ems="10"
         android:hint="@string/firstname"
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tutor_sub1"
+        app:layout_constraintBottom_toBottomOf="@+id/tutor_sub1"
         app:layout_constraintEnd_toStartOf="@+id/tutor_sub1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tutor_sub1" />
 
     <EditText
         android:id="@+id/tutor_lastName"
-        android:layout_width="0dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginEnd="21dp"
+        android:layout_width="137dp"
+        android:layout_height="0dp"
         android:background="#FFF"
         android:ems="10"
         android:hint="@string/lastname"
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tutor_sub2"
-        app:layout_constraintEnd_toStartOf="@+id/tutor_sub2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/nextbutton"
+        app:layout_constraintStart_toStartOf="@+id/t_email"
+        app:layout_constraintTop_toBottomOf="@+id/tutor_sub1" />
 
     <EditText
         android:id="@+id/t_email"
@@ -107,7 +76,7 @@
         android:layout_height="26dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="41dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="40dp"
         android:background="#FFF"
         android:ems="10"
@@ -115,7 +84,7 @@
         android:inputType="textEmailAddress"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="@+id/pass_t"
-        app:layout_constraintEnd_toStartOf="@+id/tutor_sub3"
+        app:layout_constraintEnd_toStartOf="@+id/nextbutton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tutor_lastName" />
 
@@ -124,18 +93,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="83dp"
+        android:layout_marginBottom="9dp"
         android:text="Next"
-        app:layout_constraintBottom_toBottomOf="@+id/pass_t"
+        app:layout_constraintBottom_toTopOf="@+id/pass_t"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/pass_t"
-        app:layout_constraintTop_toBottomOf="@+id/pass_t" />
+        app:layout_constraintStart_toEndOf="@+id/t_email"
+        app:layout_constraintTop_toBottomOf="@+id/tutor_lastName" />
 
     <EditText
         android:id="@+id/pass_t"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginEnd="36dp"
         android:layout_marginBottom="330dp"
         android:background="#FFF"
         android:ems="10"
@@ -143,9 +111,9 @@
         android:inputType="textPersonName"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/nextbutton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tutor_sub3" />
+        app:layout_constraintEnd_toEndOf="@+id/t_email"
+        app:layout_constraintStart_toStartOf="@+id/t_email"
+        app:layout_constraintTop_toBottomOf="@+id/nextbutton" />
 
 
 </android.support.constraint.ConstraintLayout>
