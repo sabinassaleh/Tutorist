@@ -7,23 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class RegisterDoneTutor extends AppCompatActivity {
+public class RegisterDoneStudent extends AppCompatActivity {
 
     private Button bt;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tutor_done);
+        setContentView(R.layout.student_done_none);
 
-        bt = (Button) findViewById(R.id.log_back_in);
+        bt = (Button) findViewById(R.id.go_back_login);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RegisterDoneTutor.this, LoginRegister.class));
+                startActivity(new Intent(RegisterDoneStudent.this, LoginRegister.class));
             }
         });
-
-
     }
-
 }
